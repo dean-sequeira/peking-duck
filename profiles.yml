@@ -1,0 +1,7 @@
+peking_duck:
+  target: default
+  outputs:
+    default:
+      type: duckdb
+      path: 'db/duckdb.db'
+      threads: 1
