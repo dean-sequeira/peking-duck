@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: bikeshare
+    database: duckdb
+    schema: raw
+    loader: db-setup-py
+
+    tables:
+      - name: bikeshare_day
