@@ -1,16 +1,51 @@
 # peking-duck
-dbt project using DuckDB
 
-### Using the starter project
+Sample dbt project using DuckDB as the data store and source data from a bikeshare dataset.
 
-Try running the following commands:
-- dbt run
-- dbt test
+## Prerequisites
+
+- Python 3.x
+- pip
+
+## Setup
+
+### 2. Clone the Repository
+
+Clone the repository to your local machine:
+
+### 1. Install Dependencies
+
+Install the required Python packages using pip:
+
+```sh
+pip install -r requirements.txt
+```
+
+Packages include:
+
+- dbt-core
+- dbt-duckdb
+- duckdb
+
+### 3. Create the DuckDB Database
+Here we will create a DuckDB database and load the bikeshare data into it.
+
+```sh
+python db_setup.py
+```
+
+This will create a DuckDB database called `duckdb.db` in the db directory, 
+create schemas analytics and raw, 
+and create a table called `bikeshare_day` in the raw schema from the `source_data/bikeshare/bikeshare_day.csv` file. 
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+### 4. Run the dbt Project
+Execute the dbt project:
+
+```sh
+dbt run
+```
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
